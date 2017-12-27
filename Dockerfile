@@ -34,9 +34,12 @@ pip install -r /code/requirements.txt && \
 apt-get clean && \
 apt-get autoclean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-service cron restart && \
-echo "#add by zhangyang32"  >> /etc/profile && \
+ls
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+ls
+RUN service cron restart && \
+ls 
+RUN echo "#add by zhangyang32"  >> /etc/profile && \
 ls
 
 

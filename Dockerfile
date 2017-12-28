@@ -1,5 +1,5 @@
-#FROM daocloud.io/library/python:2.7.13
-FROM daocloud.io/library/python:3.5-slim
+FROM daocloud.io/library/python:2.7.13
+#FROM daocloud.io/library/python:3.5-slim
 
 MAINTAINER peterz3g <peterz3g@163.com>
 
@@ -34,12 +34,9 @@ pip install -r /code/requirements.txt && \
 apt-get clean && \
 apt-get autoclean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-ls
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-ls
-RUN service cron restart && \
-ls 
-RUN echo "#add by zhangyang32"  >> /etc/profile && \
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+service cron restart && \
+echo "#add by zhangyang32"  >> /etc/profile && \
 ls
 
 
